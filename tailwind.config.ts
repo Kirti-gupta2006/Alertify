@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,24 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        severity: {
+          high: "hsl(var(--severity-high))",
+          medium: "hsl(var(--severity-medium))",
+          low: "hsl(var(--severity-low))",
+        },
+        status: {
+          unverified: "hsl(var(--status-unverified))",
+          verified: "hsl(var(--status-verified))",
+          resolved: "hsl(var(--status-resolved))",
+          "in-progress": "hsl(var(--status-in-progress))",
+        },
+        incident: {
+          accident: "hsl(var(--incident-accident))",
+          medical: "hsl(var(--incident-medical))",
+          fire: "hsl(var(--incident-fire))",
+          infrastructure: "hsl(var(--incident-infrastructure))",
+          crime: "hsl(var(--incident-crime))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +87,31 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "pulse-ring": {
+          "0%": { transform: "scale(0.8)", opacity: "1" },
+          "100%": { transform: "scale(2.5)", opacity: "0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-ring": "pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        float: "float 3s ease-in-out infinite",
+      },
+      boxShadow: {
+        glow: "0 0 30px hsl(var(--primary) / 0.3)",
+        "glow-emergency": "0 0 30px hsl(var(--severity-high) / 0.3)",
       },
     },
   },
