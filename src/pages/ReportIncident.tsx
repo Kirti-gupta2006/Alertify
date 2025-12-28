@@ -72,8 +72,8 @@ export default function ReportIncident() {
                   For immediate life-threatening emergencies, always call emergency services directly.
                 </p>
                 <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/30">
-                  <p className="text-2xl font-display font-bold text-destructive">911</p>
-                  <p className="text-xs text-muted-foreground">Emergency Services</p>
+                  <p className="text-2xl font-display font-bold text-destructive">100</p>
+                  <p className="text-xs text-muted-foreground">Police Emergency (India)</p>
                 </div>
               </div>
             </motion.div>
