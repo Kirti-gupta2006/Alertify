@@ -5,12 +5,25 @@ import {
   LayoutDashboard, 
   MapPin, 
   Shield, 
-  Bell,
   Menu,
-  X
+  X,
+  FileText,
+  LogIn,
+  LogOut,
+  User
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
+import { NotificationDropdown } from '@/components/notifications/NotificationDropdown';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const navItems = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -22,6 +35,7 @@ const navItems = [
 export function Header() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, userRole, signOut } = useAuth();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
@@ -31,7 +45,7 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3">
             <div className="relative">
               <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-blue-400 flex items-center justify-center shadow-lg shadow-primary/30">
-                <AlertTriangle className="h-5 w-5 text-white" />
+                <AlertTriangle className="h-5 w-5 text-primary-foreground" />
               </div>
               <div className="absolute -top-0.5 -right-0.5 h-3 w-3 rounded-full bg-destructive animate-pulse" />
             </div>
@@ -62,12 +76,44 @@ export function Header() {
 
           {/* Right Side */}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="relative">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-0.5 -right-0.5 h-4 w-4 rounded-full bg-destructive text-[10px] font-bold flex items-center justify-center text-white">
-                3
-              </span>
-            </Button>
+            <NotificationDropdown />
+
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="relative">
+                    <User className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuLabel>
+                    <div className="flex flex-col">
+                      <span>{user.email}</span>
+                      <span className="text-xs text-muted-foreground capitalize">{userRole || 'user'}</span>
+                    </div>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <Link to="/my-reports">
+                    <DropdownMenuItem>
+                      <FileText className="h-4 w-4 mr-2" />
+                      My Reports
+                    </DropdownMenuItem>
+                  </Link>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={signOut} className="text-destructive">
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link to="/auth">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <LogIn className="h-4 w-4" />
+                  <span className="hidden sm:inline">Sign In</span>
+                </Button>
+              </Link>
+            )}
 
             {/* Mobile Menu Toggle */}
             <Button
@@ -105,6 +151,14 @@ export function Header() {
                 </Link>
               );
             })}
+            {user && (
+              <Link to="/my-reports" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="ghost" className="w-full justify-start gap-3">
+                  <FileText className="h-5 w-5" />
+                  My Reports
+                </Button>
+              </Link>
+            )}
           </nav>
         </motion.div>
       )}
