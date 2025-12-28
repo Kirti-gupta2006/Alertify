@@ -1,73 +1,45 @@
-# Welcome to your Lovable project
+✨ALERTIFY : Real-Time Incident Reporting & Resource Coordination Platform✨
 
-## Project info
+Team Name: Runtime Terror
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Team Members: Kirti Gupta, Devang Sharma
 
-## How can I edit this code?
+✨Overview :
 
-There are several ways of editing your application.
+This project is a real-time web platform designed to improve emergency response by enabling quick incident reporting and efficient coordination between citizens and responders. The system provides live visibility into reported incidents, supports verification to reduce false or duplicate reports, and allows responders to prioritize and manage incidents effectively.
 
-**Use Lovable**
+✨Key Features :
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Citizen-based incident reporting with location and timestamps
 
-Changes made via Lovable will be committed automatically to this repo.
+Live incident dashboard with filtering and severity indicators
 
-**Use your preferred IDE**
+Verification mechanism to handle false or duplicate reports
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Dedicated responder/admin interface for incident management
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Cloud-hosted backend with real-time data updates
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+✨Tech Stack :
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Frontend: React (Vite), TypeScript, Tailwind CSS
 
-# Step 3: Install the necessary dependencies.
-npm i
+Backend: Supabase (PostgreSQL, APIs, Realtime)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Deployment: Public cloud hosting (Vercel / Netlify)
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+✨Live Demo :
 
-**Use GitHub Codespaces**
+🔗https://alertify-nine.vercel.app
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
 
-This project is built with:
+✨Notes :
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Backend services are provided via Supabase (Backend-as-a-Service)
 
-## How can I deploy this project?
+The application is fully deployable and scalable
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+All development was completed during the hackathon
