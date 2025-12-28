@@ -36,7 +36,7 @@ export function Header() {
               <div className="absolute -top-0.5 -right-0.5 h-3 w-3 rounded-full bg-destructive animate-pulse" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-display text-lg font-bold tracking-tight">EmergencyHub</h1>
+              <h1 className="font-display text-lg font-bold tracking-tight">Alertify</h1>
               <p className="text-xs text-muted-foreground -mt-0.5">Incident Response</p>
             </div>
           </Link>
