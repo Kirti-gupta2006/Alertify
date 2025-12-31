@@ -1,9 +1,5 @@
 ✨ALERTIFY : Real-Time Incident Reporting & Resource Coordination Platform✨
 
-Team Name: Runtime Terror
-
-Team Members: Kirti Gupta, Devang Sharma
-
 ✨Overview :
 
 This project is a real-time web platform designed to improve emergency response by enabling quick incident reporting and efficient coordination between citizens and responders. The system provides live visibility into reported incidents, supports verification to reduce false or duplicate reports, and allows responders to prioritize and manage incidents effectively.
